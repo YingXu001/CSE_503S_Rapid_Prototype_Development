@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="./style/calculator.css">
+</head>
+<body>
+    <h1>Powerful Calculator Made by Fiona Xu</h1>
+    <div class="cal">
+        <div class="grid-container">
+            <div class="grid-item">
+                <p>Please input the 1st number:</p>
+                <input type="text" name="num1" id="num1" placeholder="Input valid number">
+            </div>
+            <div class="grid-item">
+                <p>Please input the 2nd number:</p>
+                <input type="text" name="num2" id="num2" placeholder="Input valid number">
+            </div>
+            <div class="grid-item">
+                <p>Choose the operators:</p>
+                <p><input type ="radio" name="op" value = "+"> +</p>
+                <p><input type ="radio" name="op" value = "-"> -</p>
+                <p><input type ="radio" name="op" value = "*"> *</p>
+                <p><input type ="radio" name="op" value = "/"> /</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="output">
+       <p id="res"></p>
+    </div>
+     
+    <script>
+        function calculate(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            if (isNaN(num1) || isNaN(num2)){
+                document.getElementById("res").innerHTML = "Please input valid numbers!";
+                return;
+            }
+            let op = document.getElementsByName("op");
+            // if(op){
+            //     op.addEventListener("click", calculate, false);
+            // }
+            let selectedOperator = null;
+            // In pure JavaScript, in order to determine the currently selected radio button,
+            // it is necessary to iterate over an array of pointers to all possible radio buttons,
+            // and stop when you find one that is "checked".
+            for (let i=0; i < op.length; i++){
+                if(op[i].checked){
+                    selectedOperator = op[i].value;
+                    break;
+                }
+            }
+            if (selectedOperator == null) {
+                document.getElementById("res").innerHTML = "Please select an operator!";
+                return;
+            }
+            let res = null;
+            switch(selectedOperator){
+                case "+":
+                    res = num1 + num2;
+                    break;
+                case "-":
+                    res = num1 - num2;
+                    break;
+                case "*":
+                    res = num1 * num2;
+                    break;
+                case "/":
+                    if (num2 == 0){
+                        document.getElementById("res").innerHTML = "Divisor must not be zero!";
+                        break;
+                    }
+                    else{
+                        res = num1 / num2;
+                    }
+                    break;
+            }
+            if (res != null) {
+                document.getElementById("res").innerHTML = "Result = " + res;
+            }
+        }
+        document.getElementById("num1").addEventListener("input", calculate, false);
+        document.getElementById("num2").addEventListener("input", calculate, false);
+        let op = document.getElementsByName("op");
+        console.log(op);
+        for (let i = 0; i < op.length; i++) {
+            op[i].addEventListener("click", calculate, false);
+        }
+    </script>
+
+</body>
+</html>

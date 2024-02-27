@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+form {
+    text-align: center;
+}
+.icon {
+    text-align: center;
+}
+.regrade{
+    margin:auto;
+    width: 1000px;
+    color: rgb(158, 6, 6);
+}
+#search{
+    height: 30px;
+    width: 400px;
+}
+#button{
+    height: 35px;
+}

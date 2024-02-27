@@ -1,0 +1,8 @@
+Task: An individual report card for Jack Johnson, consisting of only his student ID, e-mail address, and average grade.
+MariaDB [wustl]> select id, email_address, AVG(grade) as avg_grade from grades left join students on grades.student_id = students.id where first_name = 'Jack' and last_name = 'Johnson';
++-----+------------------------------+-----------+
+| id  | email_address                | avg_grade |
++-----+------------------------------+-----------+
+| 257 | jjmuzak@brushfirerecords.com | 96.125000 |
++-----+------------------------------+-----------+
+1 row in set (0.00 sec)

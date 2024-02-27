@@ -1,0 +1,21 @@
+body {
+    background-image: url('./background.jpg');
+    background-repeat: repeat;
+    background-position: top;
+    margin-right: 200px;
+    background-attachment: fixed;
+}
+h1 {
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+    color: rgb(76, 10, 134);
+}
+.cal {
+    text-align: center;
+    color: rgb(164, 9, 241);
+}
+.cal p {
+    width: 150px;
+    display: inline;
+}

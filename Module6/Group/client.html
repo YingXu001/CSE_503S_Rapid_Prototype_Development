@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+    <link rel="stylesheet" type="text/css" href="style/client.css">
+</head>
+<body>
+    <div class="login">
+        <h1>Chat Website</h1>
+        Username <input type="text" id="username">
+        <button id="loginBtn">Log In</button>
+    </div>
+
+    <div class="rooms">
+
+        <h2 id="curUser">Current User</h2>
+
+        <div class="newroom">
+            <input type="text" id="newroom" placeholder="Create a new chat room">
+            <input type="password" id="newpwd" placeholder="Password">
+            <button id="newroomBtn">New Room</button>
+        </div>
+
+        <ul id="roomlist"></ul>
+
+    </div>
+
+    <div class="chatroom">
+
+        <div class="userlist"></div>
+
+        <div class="chatPanel">
+            <h2 id="roomname">Room Name</h2>
+            <div class="chatlog">
+                <ul id="chatlog"></ul>
+            </div>
+            
+            <div class="chatinput">
+                <select id="select"></select>
+                <textarea rows="5" id="inputText"></textarea>
+                <button id="inputBtn">Send</button>
+                <form id="upload-form">
+                    <input type="file" id="upload-input">
+                    <button type="submit">Upload</button>
+                </form>
+                <button id="mentionAllBtn">Mention All</button>
+            </div>
+        </div>
+    </div>
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src = "/socket.io/socket.io.js"></script>
+    <script src = "client.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget</title>
+    <link rel="stylesheet" type="text/css" href="./style/weather.css">
+</head>
+<body>
+    <div class="weather" id="weatherWidget">
+        <div class="weather-loc"></div>
+        <div class="weather-humidity"></div>
+        <div class="weather-temp"></div>
+        <!-- <img class="weather-tomorrow" />
+        <img class="weather-dayaftertomorrow" /> -->
+        <!-- https://stackoverflow.com/questions/5775469/whats-the-valid-way-to-include-an-image-with-no-src -->
+        <img class="weather-tomorrow" src="data:," alt="image of weather tomorrow">
+        <img class="weather-dayaftertomorrow" src="data:," alt="image of weather day after tomorrow">
+    </div><br>
+    <button id="btn">REFRESH</button>
+
+    <script>
+        function fetchWeather(){
+            // The XMLHttpRequest is simple this time:
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "https://classes.engineering.wustl.edu/cse330/content/weather_json.php", true);
+            xmlHttp.addEventListener("load", fetchWeatherCallBack, false);
+            xmlHttp.send(null);
+        }
+
+        function fetchWeatherCallBack(){
+            var jsonData = JSON.parse(event.target.responseText);
+
+            // Get location
+            var city = jsonData.location.city;
+            var state = jsonData.location.state;
+            var weather_loc = document.getElementsByClassName("weather-loc")[0];
+            weather_loc.innerHTML = "<strong>" + city + "</strong>" + " " + state;
+
+            // Get humidity
+            var humidity = jsonData.atmosphere.humidity;
+            var weather_humidity = document.getElementsByClassName("weather-humidity")[0];
+            weather_humidity.innerHTML = humidity;
+
+            // Get temprature
+            var temp = jsonData.current.temp;
+            var weather_temp = document.getElementsByClassName("weather-temp")[0];
+            weather_temp.innerHTML = temp;
+
+            // Get tomorrow
+            var tomorrow = jsonData.tomorrow.code;
+            var url1 = "http://us.yimg.com/i/us/nws/weather/gr/" + tomorrow + "ds.png";
+            var weather_tomorrow = document.getElementsByClassName("weather-tomorrow")[0];
+            weather_tomorrow.src = url1;
+
+            // Get the day after tomorrow
+            var dayafter = jsonData.dayafter.code;
+            var url2 = "http://us.yimg.com/i/us/nws/weather/gr/" + dayafter + "ds.png";
+            var weather_dayafter = document.getElementsByClassName("weather-dayaftertomorrow")[0];
+            weather_dayafter.src = url2;
+        }
+
+        document.addEventListener("DOMContentLoaded", fetchWeather, false);
+        document.getElementById("btn").addEventListener("click", fetchWeather, false);
+    </script>
+</body>
+</html>

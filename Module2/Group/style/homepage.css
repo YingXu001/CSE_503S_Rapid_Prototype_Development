@@ -1,0 +1,45 @@
+body {
+    background-image: url('../static/background.jpg');
+    background-repeat: repeat;
+    background-position: top;
+    margin-right: 500px;
+    background-attachment: fixed;
+}
+h1 {
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+    color: rgb(76, 10, 134);
+}
+
+.tb {
+    width: 1000px;
+    border: 1px;
+    padding: 1px;
+    background-color: #fff;
+    border-color: black;
+    margin-bottom: 20px;
+}
+
+.td {
+    width: 200px;
+    background-color: #fff;
+}
+
+.btn {
+    position: relative;
+    top: 145px;
+    left: 715px;
+    font-size: 20px;
+}
+
+.usrname {
+    width: 200px;
+}
+
+.logoutbtn {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    font-size: 20px;
+}

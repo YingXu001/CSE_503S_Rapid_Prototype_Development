@@ -1,0 +1,32 @@
+body {
+    background-image: url('../static/background.jpg');
+    background-repeat: repeat;
+    background-position: top;
+    margin-right: 200px;
+    background-attachment: fixed;
+}
+h1 {
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+    color: rgb(76, 10, 134);
+}
+h2 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: rgb(70, 70, 2);
+}
+form {
+    text-align: center;
+    margin: auto;
+}
+.login input[type="text"] {
+    text-align: center;
+    width: 500px;
+    color: black;
+}
+
+.usrname {
+    width: 200px;
+}

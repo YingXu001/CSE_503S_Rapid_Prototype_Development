@@ -1,0 +1,23 @@
+{
+  "name": "module6-group-module6-510576-505908",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-8d59dc4de5201274e310e4c54b9627a8934c3b88527886e3b421487c677d23eb.svg)](https://classroom.github.com/a/tduhEvNW) # CSE330 REPLACE-THIS-TEXT-WITH-YOUR-NAME-STUDENT-ID-AND-GITHUB-USERNAME",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cse330-spring-2023/module6-group-module6-510576-505908.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cse330-spring-2023/module6-group-module6-510576-505908/issues"
+  },
+  "homepage": "https://github.com/cse330-spring-2023/module6-group-module6-510576-505908#readme",
+  "dependencies": {
+    "mime": "^3.0.0",
+    "socket.io": "^4.6.1"
+  }
+}

@@ -1,0 +1,9 @@
+Task: The names, e-mails, and average grades of any student with an average below 50 so that the dean can send them an email notification that they are now on academic probation.
+MariaDB [wustl]> select students.id, students.first_name, students.last_name, students.email_address, AVG(grade) AS avg_grade from grades right join students on students.id = grades.student_id group by student_id having avg_grade < 50;
++-----+------------+-----------+------------------+-----------+
+| id  | first_name | last_name | email_address    | avg_grade |
++-----+------------+-----------+------------------+-----------+
+|  88 | Ben        | Harper    | bharper@ffym.com | 43.500000 |
+| 915 | Tim        | Armstrong | tArmz@rancid.com | 45.000000 |
++-----+------------+-----------+------------------+-----------+
+2 rows in set (0.00 sec)
