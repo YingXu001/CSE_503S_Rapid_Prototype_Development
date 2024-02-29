@@ -42,8 +42,6 @@ http://18.191.24.174/~RohanSong/module3/group/login.php
 
 ##### Creative Portion (15 Points)
 - [x] We provide the functionality to allow the users to have a deep look at the main page (for example, like time, comments, and number of clicks)
-![Image text](http://ec2-3-82-231-44.compute-1.amazonaws.com/~Fiona/module3-group-510576-505908/static/main.png)
 - [x] We also support the hottest news rankings, to be specific, we let the users sort whatever by date or by clicks.
 - [x] In addition, we make users a detailed page, so that users can look at their homepage to see the detailed information.
-![Image text](http://ec2-3-82-231-44.compute-1.amazonaws.com/~Fiona/module3-group-510576-505908/static/userdetail.png)
 
